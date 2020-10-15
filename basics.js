@@ -26,7 +26,7 @@ Primitive/Value Types:
     Number
     Boolean
     Symbol
-    undefined
+    undefined //Its is both a type and a value
     null //In javascript it is used to clear the value of a variable
 Reference Types:
     Object
@@ -118,3 +118,12 @@ function functionExample(value) {
 // let value = functionExample(10);
 // console.log(typeof value);
 
+function getCar(brand){
+    let cars = [{brand: "volvo", price: 100_000}, {brand: "saab", price: 200_000}, {brand: "ferrari", price: 1000_000}];
+    for(let car of cars){
+        if(car.brand === brand){
+            return car;
+        }
+    }
+    return null;
+}
