@@ -42,3 +42,24 @@ function interviewQuestions(job) {
 }
 
 interviewQuestions("homeless")("John");
+
+/*
+Call method
+*/
+
+let john2 = {
+  name: "John",
+  age: 20,
+  presentation: function () {
+    console.log(`Hi I'm ${this.name} and I'm ${this.age} years old.`);
+  },
+};
+
+let gosia2 = {
+  name: "gosia",
+  age: 19,
+};
+
+john2.presentation();
+//Borrowing john's method by sending gosia.
+john2.presentation.call(gosia2);
