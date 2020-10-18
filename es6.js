@@ -27,3 +27,24 @@ const getViewPortSize = () => {
 };
 
 let [viewPortWidth, viewPortHeight] = getViewPortSize();
+
+/*
+Spread Operator
+*/
+
+function calculateTotal(a, b, c, d) {
+  return a + b + c + d;
+}
+
+const values = [10, 20, 5, 1];
+// Spreads the arguments into parameters
+const totalE6 = calculateTotal(...values);
+console.log(totalE6);
+
+const [gnr, motley] = [
+  ["Axl", "Slash", "Duff", "Matt", "Gilby"],
+  ["Vince", "Tommy", "Mic"],
+];
+
+// Concatenating arrays with the Spread operator.
+const rockMembers = [...gnr, ...motley, "Meat Loaf"];
