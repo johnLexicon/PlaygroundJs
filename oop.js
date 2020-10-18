@@ -119,3 +119,31 @@ function Circle(radius) {
 // console.log(c.defaultLocation);
 // c.defaultLocation = {x: 5, y: 10};
 // console.log(c.defaultLocation);
+
+/*
+  Inheritance
+*/
+
+// Base constructor function
+function Person(name, yearOfBirth, job) {
+  (this.name = name), (this.yearOfBirth = yearOfBirth), (this.job = job);
+}
+
+Person.prototype.calculateAge = function () {
+  return new Date().getUTCFullYear() - this.yearOfBirth;
+};
+
+// Sub constructor function
+function Athlete(name, yearOfBirth, job, olympicGames, medals) {
+  Person.call(this, name, yearOfBirth, job); // Call to super constructor function
+  this.olympicGames = olympicGames;
+  this.medals = medals;
+}
+
+// Connect the super constructor with the sub constructor
+Athlete.prototype = Object.create(Person.prototype);
+
+// Must be declared after connecting the super constructor with the sub constructor.
+Athlete.prototype.wonMedal = function () {
+  this.medals++;
+};
