@@ -63,3 +63,15 @@ let gosia2 = {
 john2.presentation();
 //Borrowing john's method by sending gosia.
 john2.presentation.call(gosia2);
+
+/*
+Apply method
+Works like the method call but you can send the arguments as an array.
+*/
+
+function calculateTotal(a, b, c, d) {
+  return a + b + c + d;
+}
+
+const total = calculateTotal.apply(null, [10, 20, 5, 1]);
+console.log(total);
