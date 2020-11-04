@@ -23,7 +23,8 @@
         let rowCount = 3;
         const table = document.getElementById('sampleTable');
         function insertRow() {
-            table.insertAdjacentHTML(`<tr><td>Row${rowCount} cell1</td><td>Row${rowCount} cell2</td></tr>`);
+            table.insertAdjacentHTML('beforeend', `<tr><td>Row${rowCount} cell1</td><td>Row${rowCount} cell2</td></tr>`);
+            rowCount++;
         }
     </script>
 </body>
