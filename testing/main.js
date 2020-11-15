@@ -22,15 +22,28 @@ const getAllProducts = (token) => {
   });
 };
 
-login(true, true)
-  .then((result) => {
-    return getAllProducts("123abd");
-  })
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((err) => {
-    console.log(err.message);
-  });
+// RETRIEVING DATA WITH "THEN" SYNTAX
+// login(true, true)
+//   .then((result) => {
+//     return getAllProducts(result.token);
+//   })
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.log(err.message);
+//   });
 
+//RETRIEVING DATA WITH ASYNC AWAIT SYNTAX
+async function displayProducts(email, password) {
+  try {
+    const result = await login(email, password);
+    const products = await getAllProducts(result.token);
+    console.log(products);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+displayProducts(true, true);
 console.log("Finished");
