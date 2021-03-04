@@ -1,11 +1,17 @@
-function second() {
+function synchronous() {
+	var dt = new Date();
+  while ((new Date()) - dt <= 2000) { /* Do nothing */ }
+  console.log("Synchronous function after 2 secs");
+}
+
+function asynchronous() {
   setTimeout(() => {
-    console.log("Second function after two secs.");
+    console.log("Asynchronous function after two secs.");
   });
 }
 
-function first() {
-  second();
+function first(callback) {
+  callback();
   console.log("First function ready");
 }
 
