@@ -1,23 +1,17 @@
 function whatisThis() {
-  console.log(this);
+  console.log(this); /* this points to the global object */
 }
 
 const person = {
   name: 'Chago Rodriguez',
   age: 50,
   whatisThis: function () {
-    console.log(this);
+    console.log(this); /* this points to the person object */
   },
   whatisThisArrow: () => {
-    console.log(this);
+    console.log(this); /* this points to the global object */
   },
 };
-
-// person.whatisThisArrow(); // this = empty obj.
-// person.whatisThis(); // this = person obj.
-
-// whatisThis(); // this = global obj.
-// new whatisThis(); // this = the function itself.
 
 /*------------------------ call --------------------------*/
 
