@@ -135,4 +135,13 @@ function getCar(brand) {
   return null;
 }
 
-console.log('Running!!!');
+/* Recursive named function */
+const f = function fact(x) {
+  if (x <= 1) {
+    return 1;
+  } else {
+    return x * fact(x - 1);
+  }
+};
+
+console.log(f(4));
