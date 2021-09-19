@@ -24,15 +24,14 @@ function counter() {
 }
 
 //Closure example with getter and setter
-function counter2(n = 0) {
-  let i = n;
+function counter2(n) {
   return {
     get count() {
-      return i++;
+      return n++;
     },
     set count(m) {
-      if (m >= i) {
-        i = m;
+      if (m >= n) {
+        n = m;
       } else {
         throw Error('Value cannot be lower than the actual count value');
       }
