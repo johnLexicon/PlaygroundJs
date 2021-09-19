@@ -1,3 +1,30 @@
+/*----------------------ES5 optional parameter example------------*/
+
+function getProps(obj, arr) {
+  arr = arr || [];
+  for (prop in obj) {
+    arr.push(prop);
+  }
+  return arr;
+}
+
+let props = getProps({ id: '3', name: 'kalle', surname: 'anka' });
+console.log(props);
+
+/*----------------------ES6 optional parameter example------------*/
+
+function getProps_2(obj, arr = []) {
+  for (prop in obj) {
+    arr.push(prop);
+  }
+  return arr;
+}
+
+props = getProps_2({ id: '3', name: 'kalle', surname: 'anka' });
+console.log(props);
+
+/*--------------------- this keyword examples ------------*/
+
 function whatisThis() {
   console.log(this); /* this points to the global object */
 }
