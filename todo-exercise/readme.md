@@ -22,3 +22,10 @@ Remove Todo (in main.js):
 2. Call the function removeTodo by using the onclick event in the button element inside the #todoItem div.
 3. In the function remove the todo from the todos array (the todo with the same id as the parameter id).
 4. Call your updateTodList function to update the displayed todos.
+
+Toggle Todo (in main.js):
+
+1. Create a function called toggleCompletion that takes a todo id as an argument.
+2. Call the function toggleCompletion by using the onclick event in the span element inside the #todoItem div.
+3. In the toggleCompletion function find the todo by its id and change its completion value to the opposite value.
+4. Call the updateTodoList function to update the displayed todos.
