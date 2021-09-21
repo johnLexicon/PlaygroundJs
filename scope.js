@@ -1,3 +1,12 @@
+let value = 2;
+
+{
+  let value = 3; // This variable exists only until the end of the block
+  console.log(value);
+}
+
+console.log(value);
+
 /* Example of lexical scope with nested function */
 
 let scope = 'global';
