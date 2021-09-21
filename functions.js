@@ -1,3 +1,9 @@
+/*----------------------Named Function expression example*/
+const f = function fact(x) {
+  if (x <= 1) return 1;
+  return x * fact(x - 1);
+};
+
 /*----------------------ES5 optional parameter example------------*/
 
 function getProps(obj, arr) {
