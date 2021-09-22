@@ -14,6 +14,13 @@ function Person(fname, lname, age) {
   });
 }
 
+Person.prototype.toString = function () {
+  return `${this.firstName} ${this.lastName} ${this.age}`;
+};
+
+const p = new Person('Kalle', 'Anka', 30);
+console.log(p.toString());
+
 function Student(fname, lname, age) {
   Person.call(this, fname, lname, age);
 
