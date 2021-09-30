@@ -1,0 +1,43 @@
+@host = https://jsonplaceholder.typicode.com
+
+GET {{host}}/todos
+
+###
+
+GET {{host}}/todos/1
+
+###
+
+POST {{host}}/todos/
+Content-Type: application/json
+
+{
+  "title": "Sleep",
+  "completed": false
+}
+
+###
+
+DELETE {{host}}/todos/3
+
+###
+
+PUT {{host}}/todos/9
+Content-Type: application/json
+
+{
+  "title": "Changed todo",
+  "completed": true
+}
+
+
+###
+
+PATCH {{host}}/todos/1
+Content-Type: application/json
+
+{
+  "title": "delectus aut autem",
+  "completed": true
+}
+
