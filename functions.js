@@ -72,7 +72,7 @@ const person = {
   },
   whatisThisArrow: () => {
     console.log(this); /* this points to the global object */
-  },
+  }
 };
 
 /*------------------------ call --------------------------*/
@@ -82,12 +82,12 @@ let emp1 = {
   age: 50,
   info: function () {
     console.log(`name: ${this.name}, age: ${this.age}`);
-  },
+  }
 };
 
 let emp2 = {
   name: 'Halvan',
-  age: 55,
+  age: 55
 };
 
 let sayHi = function () {
@@ -101,3 +101,14 @@ let sayHi = function () {
 
 const infoCopy = emp1.info.bind(emp2); // Uses the function in obj emp1 and binds it with the obj emp2
 infoCopy(); // Prints out the emp2 information.
+
+/* ------------------- RangeError: Maximum call stack size exceeded example ------------*/
+function chicken() {
+  return egg();
+}
+
+function egg() {
+  return chicken();
+}
+
+// console.log(chicken(), 'came first.');
