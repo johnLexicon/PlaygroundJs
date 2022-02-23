@@ -97,6 +97,15 @@ let sayHi = function () {
 // sayHi.call(emp1);
 // sayHi.call(emp2);
 
+/*-----------------------apply------------------------------*/
+let printEmployeeKeywords = function (...keywords) {
+  console.log('Keywords for', this.name, ':');
+  keywords.forEach((k) => console.table(k));
+};
+
+// Every value in sent array is a parameter in the applied function.
+printEmployeeKeywords.apply(emp2, ['fast', 'nice', 'novice']);
+
 /*-----------------------bind------------------------------*/
 
 const infoCopy = emp1.info.bind(emp2); // Uses the function in obj emp1 and binds it with the obj emp2
