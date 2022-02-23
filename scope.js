@@ -25,3 +25,18 @@ Even if the nested function is called outside the local scope the scope will sti
 Lexical scoping rule: Functions are executed in the scope they were defined.
 */
 console.log(nestedFunction()); // local
+
+/* ------------------ Scope with var and without var or let ----------------*/
+
+{
+  var varLocal = 'hej';
+}
+
+console.log('varLocal:', varLocal);
+
+function assignInFunction() {
+  theVariable = 'Assigned in function';
+}
+
+assignInFunction();
+console.log(theVariable);
