@@ -1,3 +1,21 @@
+// The this keyword refers to the owner of the function we are executing
+
+let message = {
+  name: 'Kalle Anka',
+  regularFunction: function () {
+    console.log(this); // This refers to the message object
+    return 'Hello ' + this.name;
+  },
+  arrowFunction: () => {
+    console.log(this); // This refers to the global object
+    return 'Hello ' + this.name;
+  }
+};
+
+console.log('Regular function:', message.regularFunction());
+console.log('Arrow function', message.arrowFunction());
+console.log(this);
+
 /*------------Example with nested function ---------- */
 
 let obj = {
@@ -18,7 +36,7 @@ let obj = {
       console.log(this === obj); // true
     };
     af();
-  },
+  }
 };
 
 obj.m();
