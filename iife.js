@@ -9,7 +9,7 @@ const myNamespace = (function (newName) {
     console.log('This is my function');
   }
   function hello() {
-    console.log('Hello ' + userName);
+    console.log('Hello ' + userName); // The userName variable gets captured by the closure.
   }
 
   return { hello, myFunction };
@@ -17,3 +17,5 @@ const myNamespace = (function (newName) {
 
 myNamespace.hello();
 myNamespace.myFunction();
+console.log(myNamespace.userName); // Does not exist after the iife execution.
+console.log(myNamespace);
