@@ -10,7 +10,7 @@ function Person(fname, lname, age) {
       const names = fullName.split(' ');
       this.firstName = names[0];
       this.lastName = names[1];
-    },
+    }
   });
 }
 
@@ -20,6 +20,8 @@ Person.prototype.toString = function () {
 
 const p = new Person('Kalle', 'Anka', 30);
 console.log(p.toString());
+console.log(p.__proto__);
+console.log(p.__proto__.__proto__);
 
 function Student(fname, lname, age) {
   Person.call(this, fname, lname, age);
@@ -39,12 +41,11 @@ function Student(fname, lname, age) {
 Student.prototype = Object.create(Person.prototype);
 Student.prototype.constructor = Student;
 
-let john = new Student('John', 'lundgren', 55);
+let john = new Student('John', 'Lundgren', 100);
 john.enroll('CS2020');
 john.enroll('MA3210');
 john.enroll('BI4322');
 
-john.fullName = 'Kalle Anka';
 console.log(john.fullName);
 console.log(john.__proto__);
 console.log(john.__proto__.__proto__);
