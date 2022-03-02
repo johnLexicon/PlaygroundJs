@@ -1,6 +1,8 @@
-function Animal(name) {
-  this.name = name;
-}
+/*
+Every function has a prototype object.
+Then functions prototype is the prototype object that will become available to all instances created with the functions constructor.
+
+*/
 
 Animal.prototype.speak = function () {
   console.log(`${this.name} makes generic sound`);
