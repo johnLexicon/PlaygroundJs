@@ -40,3 +40,11 @@ function assignInFunction() {
 
 assignInFunction();
 console.log(theVariable);
+
+function varFunction() {
+  var varInFunction = 'var declared in function';
+}
+
+varFunction();
+
+// console.log(varInFunction);
