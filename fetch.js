@@ -50,8 +50,12 @@ fetchOrder(1)
     return fetchOrderAddress(order.shippingAddress);
   })
   .then((shippingAddress) => {
-    spinnerElem.classList.add('d-none');
     contentElem.innerText = JSON.stringify(shippingAddress, null, 1);
-    console.log(shippingAddress);
   })
-  .catch((err) => console.log(err.message));
+  .catch((err) => {
+    console.log(err.message);
+    contentElem.innerText = err.message;
+  })
+  .finally(() => {
+    spinnerElem.classList.add('d-none');
+  });
