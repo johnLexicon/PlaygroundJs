@@ -43,11 +43,15 @@ function fetchOrderAddress(addressId) {
     });
 }
 
+const spinnerElem = document.getElementById('spinner');
+const contentElem = document.getElementById('fetchContent');
 fetchOrder(1)
   .then((order) => {
     return fetchOrderAddress(order.shippingAddress);
   })
   .then((shippingAddress) => {
+    spinnerElem.classList.add('d-none');
+    contentElem.innerText = JSON.stringify(shippingAddress, null, 1);
     console.log(shippingAddress);
   })
   .catch((err) => console.log(err.message));
