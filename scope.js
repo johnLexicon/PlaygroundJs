@@ -45,6 +45,16 @@ function varFunction() {
   var varInFunction = 'var declared in function';
 }
 
-varFunction();
-
 // console.log(varInFunction);
+
+{
+  var varInScope = 10;
+}
+
+console.log("varInScope", varInScope);
+
+while(varInScope < 20) {
+  varInScope++;
+}
+
+console.log("varInScope", varInScope);
