@@ -8,26 +8,26 @@ const f = function fact(x) {
 
 function getProps(obj, arr) {
   arr = arr || [];
-  for (prop in obj) {
+  for (var prop in obj) {
     arr.push(prop);
   }
   return arr;
 }
 
 let props = getProps({ id: '3', name: 'kalle', surname: 'anka' });
-console.log(props);
+console.log("Property names in object:", props);
 
 /*----------------------ES6 optional parameter example------------*/
 
 function getProps_2(obj, arr = []) {
-  for (prop in obj) {
+  for (let prop in obj) {
     arr.push(prop);
   }
   return arr;
 }
 
 props = getProps_2({ id: '3', name: 'kalle', surname: 'anka' });
-console.log(props);
+console.log("Property names in object:", props);
 
 /*-------------------- rest parameters example ---------------------*/
 
