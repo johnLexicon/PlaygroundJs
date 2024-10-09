@@ -1,20 +1,20 @@
 // The this keyword refers to the owner of the function we are executing
 
 let message = {
-  name: 'Kalle Anka',
+  employee: 'Kalle Anka',
   regularFunction: function () {
     console.log(this); // This refers to the message object
-    return 'Hello ' + this.name;
+    return 'Hello ' + this.employee;
   },
   arrowFunction: () => {
     console.log(this); // This refers to the global object
-    return 'Hello ' + this.name;
+    return 'Hello ' + this.employee; //undefined (employee not defined in global object).
   }
 };
 
 console.log('Regular function:', message.regularFunction());
 console.log('Arrow function', message.arrowFunction());
-console.log(this);
+console.log('Global this:', this);
 
 /*------------Example with nested function ---------- */
 
